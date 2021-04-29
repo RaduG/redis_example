@@ -1,5 +1,5 @@
 ENV_BIN_DIR=venv/bin
-CODE_DIR=project
+CODE_DIR=redis_example
 TESTS_DIR=tests
 
 setup_environment:
