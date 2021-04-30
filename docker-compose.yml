@@ -1,0 +1,24 @@
+services:
+    worker1:
+        build: .
+        environment:
+            WORKER_ID: "1"
+        depends_on:
+            - redis
+        command: redis_example.worker
+    worker2:
+        build: .
+        environment:
+            WORKER_ID: "2"
+        depends_on:
+            - redis
+        command: redis_example.worker
+
+    manager:
+        build: .
+        depends_on:
+            - redis
+        command: redis_example.manager
+    
+    redis:
+        image: redis
